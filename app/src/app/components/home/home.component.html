@@ -1,0 +1,57 @@
+<form [formGroup]="permissionForm" (ngSubmit)="onSubmit()" clrForm >
+  
+  <h3>User Permissions</h3>
+  <section class="form-block">
+    <div class="form-group" style="padding-left: 0;">
+        <div class="toggle-switch right-label">
+            <input type="checkbox" id="createUser" formControlName="createUser">
+            <label for="createUser">Create</label>
+        </div>
+        <div class="toggle-switch right-label">
+            <input type="checkbox" id="readUser" formControlName="readUser">
+            <label for="readUser">Read</label>
+        </div>
+        <div class="toggle-switch right-label">
+            <input type="checkbox" id="updateUser" formControlName="updateUser">
+            <label for="updateUser">Update</label>
+        </div>
+        <div class="toggle-switch right-label">
+            <input type="checkbox" id="deleteUser" formControlName="deleteUser">
+            <label for="deleteUser">Delete</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="selects_5">Areas user may access:</label>
+        <div class="select multiple">
+            <select id="selects_5" multiple>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>50000000</option>
+            </select>
+        </div>
+    </div>
+  </section>
+  <!-- <clr-checkbox-container clrInline>
+    <clr-checkbox-wrapper>
+      <input type="checkbox" clrCheckbox formControlName="createUser" />
+      <label>Create</label>
+    </clr-checkbox-wrapper>
+    <clr-checkbox-wrapper>
+      <input type="checkbox" clrCheckbox formControlName="readUser" />
+      <label>Read</label>
+    </clr-checkbox-wrapper>
+    <clr-checkbox-wrapper>
+      <input type="checkbox" clrCheckbox formControlName="updateUser" />
+      <label>Update</label>
+    </clr-checkbox-wrapper>
+    <clr-checkbox-wrapper>
+      <input type="checkbox" clrCheckbox formControlName="deleteUser" />
+      <label>Delete</label>
+    </clr-checkbox-wrapper>
+  </clr-checkbox-container> -->
+
+  <br/>
+  <button type="submit" [disabled]="!permissionForm.valid">Submit</button>
+</form>
